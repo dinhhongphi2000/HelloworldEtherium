@@ -37,14 +37,24 @@ App = {
     ready: function (data) {
         console.log("App ready");
         //App.getMessage().then(function(abc) {console.log(abc)},function(adf){console.log(adf)});
+        //Không tạo transaction
         this.instance
-            .get()
-            //.call({from : "0xf17f52151EbEF6C7334FAD080c5704D77216b732"})
+            .get
+            .call()
             .then(function (message) {
                 $(".panel-body").text(message);
             }, function (err) {
                 console.log(err);
             })
+
+        //tạo transaction
+        // this.instance
+        //     .get()
+        //     .then(function (message) {
+        //         $(".panel-body").text(message);
+        //     }, function (err) {
+        //         console.log(err);
+        //     })
     }
 }
 
